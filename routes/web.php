@@ -35,8 +35,10 @@ Route::middleware(['auth','verified'])
     ->group(function(){
         Route::get('/',[DashboardController::class, 'index'])->name('home');
         Route::get('categories-posts', [CategoryController::class, 'categoryPosts'])->name('categoryPosts');
+        // Rotta per i post
         Route::resource('posts', PostController::class);
-        Route::resource('posts', CategoryController::class);
+        // Rotta per le categorie
+        Route::resource('categories', CategoryController::class);
     });
 
 
